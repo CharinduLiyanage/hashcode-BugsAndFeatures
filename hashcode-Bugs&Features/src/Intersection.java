@@ -2,13 +2,16 @@ import java.util.ArrayList;
 
 public class Intersection {
     private int name;
-    private int noOfIncomingStreets;
-    private ArrayList<IncomingStreet> incomingStreets;
+    private int noOfIncomingStreets = 0;
+    private ArrayList<IncomingStreet> incomingStreets = new ArrayList<>();
 
-    public Intersection(int name, int noOfIncomingStreets, ArrayList<IncomingStreet> incomingStreets) {
+    public Intersection(int name) {
         this.name = name;
-        this.noOfIncomingStreets = noOfIncomingStreets;
-        this.incomingStreets = incomingStreets;
+    }
+
+    public void addIncomingStreets(IncomingStreet incomingStreet) {
+        this.incomingStreets.add(incomingStreet);
+        this.noOfIncomingStreets++;
     }
 
     @Override

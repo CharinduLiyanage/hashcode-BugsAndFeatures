@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class OutputFile {
     private int noOfIntersections;
-    private ArrayList<Intersection> intersections;
+    private ArrayList<Intersection> intersections = new ArrayList<>();
 
     public void write(String fileName) throws IOException {
         FileWriter myWriter = new FileWriter(fileName);
@@ -12,9 +12,12 @@ public class OutputFile {
         myWriter.close();
     }
 
-    public OutputFile(int noOfIntersections, ArrayList<Intersection> intersections) {
-        this.noOfIntersections = noOfIntersections;
-        this.intersections = intersections;
+    public OutputFile() {
+    }
+
+    public void addIntersection(Intersection intersection) {
+        this.intersections.add(intersection);
+        this.noOfIntersections++;
     }
 
     @Override
