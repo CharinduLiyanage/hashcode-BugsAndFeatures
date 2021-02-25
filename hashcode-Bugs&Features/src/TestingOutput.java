@@ -6,27 +6,20 @@ public class TestingOutput {
         IncomingStreet street = new IncomingStreet("street-name-1", 2);
         IncomingStreet street2 = new IncomingStreet("street-name-2", 4);
 
-        ArrayList<IncomingStreet> streets = new ArrayList<>();
-        streets.add(street);
-        Intersection intersection = new Intersection(
-                1,
-                1,
-                streets
-        );
+        Intersection intersection = new Intersection(1);
+        intersection.addIncomingStreets(street);
 
-        ArrayList<IncomingStreet> streets2 = new ArrayList<>();
-        streets2.add(street);
-        streets.add(street2);
-        Intersection intersection2 = new Intersection(
-                0,
-                2,
-                streets2
-        );
 
-        ArrayList<Intersection> intersections = new ArrayList<>();
-        intersections.add(intersection);
-        intersections.add(intersection2);
-        OutputFile outputFile  = new OutputFile(2, intersections);
+        Intersection intersection2 = new Intersection(0);
+        intersection2.addIncomingStreets(street);
+        intersection2.addIncomingStreets(street2);
+
+
+
+        OutputFile outputFile  = new OutputFile();
+        outputFile.addIntersection(intersection);
+        outputFile.addIntersection(intersection2);
+
 
         try {
             outputFile.write("Outputs/test_output.txt");
