@@ -1,1 +1,1 @@
-# hashcode-Bugs-Features
+# hashcode-BugsAndFeatures
