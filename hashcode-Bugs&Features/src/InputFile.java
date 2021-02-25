@@ -8,7 +8,7 @@ public class InputFile {
     private int bonus;
     ArrayList<Street> streets = new ArrayList<>();
     ArrayList<Vehicle> vehicles = new ArrayList<>();
-    
+
 
     public InputFile(int timeDuration, int noOfIntersections, int noOfStreets, int noOfCars, int bonus) {
         this.timeDuration = timeDuration;
