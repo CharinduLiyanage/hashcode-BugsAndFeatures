@@ -24,25 +24,33 @@ public class Main {
 
         for (int i = 0; i <inputFile.getNoOfStreets(); i++) {
 
-            String[] streets = bufferedReader.readLine().split(" ");
+            String[] streetInput = bufferedReader.readLine().split(" ");
 
-            int intersection = Integer.parseInt(streets[0]);
-            int endsAt = Integer.parseInt(streets[1]);
-            String streetName = streets[2];
-            int duration = Integer.parseInt(streets[3]);
+            int start = Integer.parseInt(streetInput[0]);
+            int ends = Integer.parseInt(streetInput[1]);
+            String name = streetInput[2];
+            int duration = Integer.parseInt(streetInput[3]);
 
+            Street street = new Street(start, ends, name, duration);
+            inputFile.addStreet(street);
         }
 
         for (int i = 0; i <inputFile.getNoOfCars(); i++) {
 
-            String[] cars = bufferedReader.readLine().split(" ");
-            int numOfStreets = Integer.parseInt(cars[0]);
+            String[] carInput = bufferedReader.readLine().split(" ");
+            int numOfStreets = Integer.parseInt(carInput[0]);
 
-             for(int j = 0; j <numOfStreets; j++){
-                 
-             }
+            Vehicle vehicle = new Vehicle(numOfStreets);
 
+            for(int j = 1; j <numOfStreets; j++){
+                for (Street street: inputFile.getStreets()) {
+                    if (street.getName().equals(carInput[j])) {
+                        vehicle.addStreet(street);
+                    }
+                }
+            }
+            inputFile.addVehicle(vehicle);
         }
-        return null;
+        return inputFile;
     }
 }

@@ -2,11 +2,22 @@ import java.util.ArrayList;
 
 public class Vehicle {
     private int noOfStreets;
-    private ArrayList<String> streets;
+    private ArrayList<Street> streets = new ArrayList<>();
 
-    public Vehicle(int noOfStreets, ArrayList<String> streets) {
+    public Vehicle(int noOfStreets) {
         this.noOfStreets = noOfStreets;
-        this.streets = streets;
+    }
+
+    public void addStreet(Street street) {
+        this.streets.add(street);
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "noOfStreets=" + noOfStreets +
+                ", streets=" + streets +
+                '}';
     }
 
     public int getNoOfStreets() {
@@ -17,11 +28,11 @@ public class Vehicle {
         this.noOfStreets = noOfStreets;
     }
 
-    public ArrayList<String> getStreets() {
+    public ArrayList<Street> getStreets() {
         return streets;
     }
 
-    public void setStreets(ArrayList<String> streets) {
+    public void setStreets(ArrayList<Street> streets) {
         this.streets = streets;
     }
 }

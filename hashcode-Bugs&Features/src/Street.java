@@ -1,12 +1,32 @@
 public class Street {
     private int start;
     private int end;
+    private String name;
     private int duration;
 
-    public Street(int start, int end, int duration) {
+    public Street(int start, int end, String name, int duration) {
         this.start = start;
         this.end = end;
+        this.name = name;
         this.duration = duration;
+    }
+
+    @Override
+    public String toString() {
+        return "Street{" +
+                "start=" + start +
+                ", end=" + end +
+                ", name='" + name + '\'' +
+                ", duration=" + duration +
+                '}';
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getStart() {
