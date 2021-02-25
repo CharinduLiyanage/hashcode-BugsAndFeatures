@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.ArrayList;
 
 public class InputFile {
@@ -16,6 +17,43 @@ public class InputFile {
         this.noOfStreets = noOfStreets;
         this.noOfCars = noOfCars;
         this.bonus = bonus;
+    }
+
+    public void addStreet(Street street) {
+        this.streets.add(street);
+    }
+
+    public void addVehicle(Vehicle vehicle) {
+        this.vehicles.add(vehicle);
+    }
+
+    @Override
+    public String toString() {
+        return "InputFile{" +
+                "\n\ttimeDuration=" + timeDuration +
+                ",\n\t noOfIntersections=" + noOfIntersections +
+                ",\n\t noOfStreets=" + noOfStreets +
+                ",\n\t noOfCars=" + noOfCars +
+                ",\n\t bonus=" + bonus +
+                ",\n\t streets=" + streets +
+                ",\n\t vehicles=" + vehicles +
+                "\n}";
+    }
+
+    public ArrayList<Street> getStreets() {
+        return streets;
+    }
+
+    public void setStreets(ArrayList<Street> streets) {
+        this.streets = streets;
+    }
+
+    public ArrayList<Vehicle> getVehicles() {
+        return vehicles;
+    }
+
+    public void setVehicles(ArrayList<Vehicle> vehicles) {
+        this.vehicles = vehicles;
     }
 
     public int getTimeDuration() {
