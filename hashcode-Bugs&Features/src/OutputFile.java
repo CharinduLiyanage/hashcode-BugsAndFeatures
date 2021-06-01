@@ -20,6 +20,11 @@ public class OutputFile {
         this.noOfIntersections++;
     }
 
+    public void removeIntersection(Intersection intersection) {
+        this.intersections.remove(intersection);
+        this.noOfIntersections--;
+    }
+
     @Override
     public String toString() {
         StringBuilder output = new StringBuilder();
